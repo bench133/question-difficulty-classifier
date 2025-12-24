@@ -34,13 +34,13 @@ jobs:
       - name: Format check with black
         run: black --check src tests scripts || true
 
-- name: Run tests
-  run: |
-    PYTHONPATH=. pytest -v --cov=src
+      - name: Run tests
+        run: |
+            PYTHONPATH=. pytest -v --cov=src
 
-- name: Retrain model + write metrics
-  run: |
-    PYTHONPATH=. python scripts/train.py --data data/sample.csv
+      - name: Retrain model + write metrics
+        run: |
+              PYTHONPATH=. python scripts/train.py --data data/sample.csv
 
 
       - name: Commit metrics (and model) if changed
