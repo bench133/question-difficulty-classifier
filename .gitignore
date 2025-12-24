@@ -1,0 +1,30 @@
+.gitignore
+__pycache__/
+*.py[cod]
+*$py.class
+
+venv/
+env/
+ENV/
+
+.env
+.env.local
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (если большие)
+data/*.csv
+data/*.xlsx
+!data/sample.csv
+
+# ML artifacts (если не хочешь хранить модель в репо — раскомментируй)
+# models/*.joblib
+
+# Metrics (оставляем в репо, т.к. по заданию коммитим JSON)
+# metrics/*.json
+
+*.log
+.DS_Store
