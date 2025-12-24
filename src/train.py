@@ -40,12 +40,15 @@ def train_and_evaluate(cfg: TrainConfig) -> Dict:
 
     # stratify требует минимум по 2 примера на класс, иначе упадет.
     # для маленьких датасетов можно снять stratify, но в sample.csv классы повторяются.
+    class_counts = y.value_counts()
+    can_stratify = (class_counts.min() >= 2)
+
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
         test_size=cfg.test_size,
         random_state=cfg.random_state,
-        stratify=y,
+        stratify=y if can_stratify else None,
     )
 
     clf = RandomForestClassifier(
