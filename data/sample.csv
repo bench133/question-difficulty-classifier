@@ -1,0 +1,6 @@
+question_id,question_text,avg_time_sec,pct_correct,difficulty
+1,"What is 2 + 2?",6,0.95,easy
+2,"Explain the difference between supervised and unsupervised learning.",65,0.62,medium
+3,"Prove that every finite subgroup of the multiplicative group of a field is cyclic.",240,0.18,hard
+4,"The derivative of sin(x) equals ...",18,0.84,easy
+5,"Given a graph, find the shortest path using Dijkstra and justify complexity.",140,0.40,hard
